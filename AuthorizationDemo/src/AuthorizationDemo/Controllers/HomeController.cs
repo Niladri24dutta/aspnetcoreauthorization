@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthorizationLab.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class HomeController : Controller
     {
         // GET: /<controller>/

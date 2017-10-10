@@ -5,11 +5,13 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AuthorizationLab.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
         public async Task<IActionResult> Login(string returnUrl = null)
@@ -17,11 +19,12 @@ namespace AuthorizationLab.Controllers
             const string Issuer = "https://contoso.com";
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, "barry", ClaimValueTypes.String, Issuer));
+            claims.Add(new Claim(ClaimTypes.Role, "Administrator", ClaimValueTypes.String, Issuer));
             var userIdentity = new ClaimsIdentity("SuperSecureLogin");
             userIdentity.AddClaims(claims);
             var userPrincipal = new ClaimsPrincipal(userIdentity);
 
-            await HttpContext.Authentication.SignInAsync("Cookie", userPrincipal,
+            await HttpContext.Authentication.SignInAsync("Cookies", userPrincipal,
                 new AuthenticationProperties
                 {
                     ExpiresUtc = DateTime.UtcNow.AddMinutes(20),
