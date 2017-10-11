@@ -18,7 +18,9 @@ namespace AuthorizationLab
         {
             services.AddAuthorization(options =>
             {
-                options.DefaultPolicy = new AuthorizationPolicyBuilder("Cookies").RequireAuthenticatedUser().Build();
+                options.DefaultPolicy = new AuthorizationPolicyBuilder("Cookie").RequireAuthenticatedUser().Build();
+                options.AddPolicy("AdministratorOnly", policy => policy.RequireRole("Administrator"));
+                options.AddPolicy("EmployeeId", policy => policy.RequireClaim("EmployeeId","123","456"));
             });
 
             services.AddMvc(config =>
@@ -35,11 +37,11 @@ namespace AuthorizationLab
         {
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                AuthenticationScheme = "Cookies",
+                AuthenticationScheme = "Cookie",
                 LoginPath = new PathString("/Account/Login/"),
                 AccessDeniedPath = new PathString("/Account/Forbidden/"),
                 AutomaticAuthenticate = true,
-                AutomaticChallenge = true
+                AutomaticChallenge = false
             });
 
             app.UseMvc(routes =>
