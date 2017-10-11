@@ -165,6 +165,10 @@
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll"
 -resource:"D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\obj\Debug\netcoreapp1.0\AuthorizationDemodotnet-compile.deps.json",AuthorizationDemo.deps.json
+"D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\HasBadgeHandler.cs"
+"D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\HasTemporaryPassHandler.cs"
+"D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\MinimumAgeRequirement.cs"
+"D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\OfficeEntryRequirement.cs"
 "D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\Program.cs"
 "D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\Startup.cs"
 "D:\Web training videos\asp .net core\Authorization\Custom authorization lab\aspnetcoreauthorization\AuthorizationDemo\src\AuthorizationDemo\Controllers\AccountController.cs"
