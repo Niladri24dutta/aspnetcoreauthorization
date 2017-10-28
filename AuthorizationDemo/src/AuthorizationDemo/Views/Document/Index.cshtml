@@ -1,0 +1,11 @@
+﻿@using AuthorizationLab;
+@model IEnumerable<Document>
+
+<h1>Document library</h1>
+
+@foreach (var doc in Model)
+{
+    <p>
+        @Html.ActionLink("Document #"+doc.Id,"Edit",new { id = doc.Id})
+    </p>
+}
